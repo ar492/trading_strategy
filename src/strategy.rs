@@ -53,17 +53,7 @@ impl StrategyObject {
         // Placeholder: Logic for trade signals
     }
 
-    pub fn get_level_stats(&self, _level: i32) -> Index {
-        // Placeholder: Return some dummy data for demonstration
-        Index::new(
-            Buy {
-                price_buy: 10,
-                quantity_buy: 100,
-            },
-            Sell {
-                price_sell: 20,
-                quantity_sell: 50,
-            },
-        )
+    pub fn get_level_stats(&self, level: usize) -> Option<&Index> {
+        self.order_book.get(level)
     }
 }
